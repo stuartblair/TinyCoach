@@ -1,4 +1,8 @@
 {
     "idf.adapterTargetName": "esp32",
-    "idf.port": "/dev/ttyUSB0"
+    "idf.port": "/dev/ttyUSB0",
+    "files.associations": {
+        "stdio.h": "c",
+        "mpu6050.h": "c"
+    }
 }

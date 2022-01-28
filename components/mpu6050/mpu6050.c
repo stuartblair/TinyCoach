@@ -3,5 +3,6 @@
 
 void func(void)
 {
-
+    printf("Hello world!\n");
+    fflush(stdout);
 }
