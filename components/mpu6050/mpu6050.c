@@ -62,7 +62,7 @@ static esp_err_t i2c_master_init(void)
     return i2c_driver_install(i2c_master_port, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
 }
 
-void func(void)
+u_int8_t findI2CAddress(void)
 {
     uint8_t data[2];
     ESP_ERROR_CHECK(i2c_master_init());
@@ -78,6 +78,12 @@ void func(void)
     ESP_ERROR_CHECK(i2c_driver_delete(I2C_MASTER_NUM));
     ESP_LOGI(TAG, "I2C unitialized successfully");
 
+    return data[0];
+}
+
+void func(void)
+{
+    findI2CAddress();
     printf("Hello world!\n");
     fflush(stdout);
 }
