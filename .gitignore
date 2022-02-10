@@ -1,4 +1,5 @@
 .vscode
 build
-test/build
+**/build
 **/sdkconfig
+**/CMakefiles
